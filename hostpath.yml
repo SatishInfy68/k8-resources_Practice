@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: hostpath-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: hostpath-daemonset
+  template:
+    metadata:
+      labels:
+        app: hostpath-daemonset
+    spec:
+      containers:
+      - name: example-container
+        image: nginx:latest
+        volumeMounts:
+        - name: hostpath-volume
+          mountPath: /data  # This is the path inside the container where the hostpath will be mounted
+      volumes:
+      - name: hostpath-volume
+        hostPath:
+          path: /var/log  # Replace with the actual host path you want to mount
