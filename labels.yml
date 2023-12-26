@@ -6,6 +6,8 @@ metadata:
     name: shiva
     course: DevOps
     trainer: Shiva rock 
+  annotations:
+    org.docker.kubernetes.maintainer: shiva
 spec: 
   containers: 
     - name: nginx
