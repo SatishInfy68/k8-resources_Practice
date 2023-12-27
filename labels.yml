@@ -1,16 +1,13 @@
-apiVersion: v1 
+apiVersion: v1
 kind: Pod
-metadata: 
-  name: labels-pod
-  labels: 
-    name: shiva
-    course: DevOps
-    trainer: Shiva rock 
-  annotations:
-    org.docker.kubernetes.maintainer: shiva
-spec: 
-  containers: 
-    - name: nginx
-      image: nginx
-      ports: 
-        containerPort: 80
+metadata:
+  name: label-demo
+  labels:
+    environment: production
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
